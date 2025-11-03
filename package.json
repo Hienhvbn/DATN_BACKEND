@@ -1,0 +1,44 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon src/server.js",
+        "seed": "node generate-faker-data.js",
+        "test": "echo \"Err or: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Hienhvbn/DATN.git"
+    },
+    "author": "vhien03",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Hienhvbn/DATN/issues"
+    },
+    "homepage": "https://github.com/Hienhvbn/DATN#readme",
+    "dependencies": {
+        "axios": "1.7.7",
+        "bcrypt": "5.1.1",
+        "body-parser": "1.20.3",
+        "cloudinary": "^2.5.0",
+        "cookie": "1.0.1",
+        "cookie-parser": "1.4.7",
+        "cors": "2.8.5",
+        "crypto": "1.0.1",
+        "crypto-js": "4.2.0",
+        "dayjs": "1.11.13",
+        "dotenv": "16.6.1",
+        "express": "4.21.1",
+        "jsonwebtoken": "9.0.2",
+        "jwt-decode": "4.0.0",
+        "mongoose": "^8.9.5",
+        "multer": "^1.4.5-lts.1",
+        "nodemon": "3.1.9",
+        "vnpay": "^1.6.1"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^10.1.0"
+    }
+}
