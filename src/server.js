@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3002;
-const host = process.env.HOST || '0.0.0.0';
+const port = 3002;
 require('dotenv').config();
 
 const { dbConnect } = require('./config/db.js');
@@ -31,6 +30,6 @@ connectCloudinary();
 
 route(app);
 
-app.listen(port, host, () => {
-    console.log(`Backend server is running at http://${host}:${port}`);
+app.listen(port, () => {
+    console.log(`Backend server is running at http://localhost:${port}`);
 });

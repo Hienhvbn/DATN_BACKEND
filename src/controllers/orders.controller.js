@@ -34,7 +34,7 @@ function generateOrderID() {
     const timestamp = now.getTime();
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
-    return `PAY${timestamp}${seconds}${milliseconds}`;
+    return `ORD${timestamp}${seconds}${milliseconds}`;
 }
 
 async function detailOrder(order) {

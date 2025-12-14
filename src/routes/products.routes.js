@@ -63,6 +63,7 @@ router.post('/delete', authAdmin, asyncHandler(controllerProducts.deleteProduct)
 router.get('/all', asyncHandler(controllerProducts.getAllProducts));
 router.get('/best-selling', asyncHandler(controllerProducts.getTopBestSellingProducts));
 router.get('/category', asyncHandler(controllerProducts.getProductByCategory));
+router.get('/top-new', asyncHandler(controllerProducts.getTopNewProducts));
 
 // ========== STOCK MANAGEMENT ROUTES ==========
 router.patch('/:id/stock/update', authAdmin, asyncHandler(controllerProducts.updateProductStock));

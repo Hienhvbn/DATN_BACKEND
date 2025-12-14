@@ -204,6 +204,20 @@ class ProductController {
         new OK({ message: 'Lấy tất cả sản phẩm thành công', metadata: products }).send(res);
     }
 
+    // Lấy top 10 sản phẩm mới nhất
+    async getTopNewProducts(req, res) {
+        const products = await modelProduct
+            .find()
+            .sort({ createdAt: 1 })
+            .limit(4)
+            .populate('brand', 'name _id image')
+            .populate('category', 'name _id');
+        new OK({
+            message: 'Lấy top 4 sản phẩm mới nhất thành công',
+            metadata: products,
+        }).send(res);
+    }
+
     // Xóa sản phẩm
     async deleteProduct(req, res) {
         const { _id } = req.body;
@@ -250,10 +264,9 @@ class ProductController {
 
         // Lọc bỏ các sản phẩm null và chỉ lấy sản phẩm còn hàng, giới hạn top 10
         const filteredProducts = products
-            .filter((p) => p !== null && p.stockStatus === 'in_stock')
+            .filter((p) => p !== null)
             .sort((a, b) => b.totalSold - a.totalSold)
             .slice(0, 10);
-
         new OK({
             message: 'Lấy top 10 sản phẩm mua nhiều nhất thành công',
             metadata: filteredProducts,
